@@ -1,33 +1,74 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<link rel = "stylesheet" href = "CSSMeteo.css" />
-		<meta charset="UTF-8">
+	  <meta charset="UTF-8">
+	  <link rel="stylesheet" href="td4.css" />
+
+
+	  <script type="text/javascript">
+	  	function afficheVille() {
+  // 1. RÃ©cupÃ©ration de la valeur courante du select, 
+  // soit l'id de l'option sÃ©lectionnÃ©e 
+  let nomVilleChoisie = document.getElementById("choixVille").value;
+  console.log(nomVilleChoisie)
+
+  // 2. RÃ©cupÃ©ration de la liste de toutes les div correspondant 
+  // Ã  une div de mÃ©tÃ©o 
+  let villes = document.getElementsByClassName("city");
+  console.log(villes)
+
+  // 3. Parcours de la liste des div mÃ©tÃ©o 
+  // On cache celles qui ne sont pas sÃ©lectionnÃ©es.
+ 
+  for (i=0; i<villes.length; i++) {
+    console.log(villes[i])
+    if (villes[i].id == nomVilleChoisie) {
+      // garder l'element -> ELEMENT.style.display= "";
+	  villes[i].style.display= "";
+    } else {
+	  // cacher l'element visible -> ELEMENT.style.display= "none";
+	  villes[i].style.display= "none";
+    }
+  }
+}
+	  </script>
+
+		
 	</head>
-	<body>
-	
-		<header>TD n°4 Technologies Web - Application météo </header>
-	
-		<div>
-		<h2>Niort</h2>
-		<p>12°, pluvieux</p>
-		<img src="pluvieux.png" width="5%"/>
+	<body onload="afficheVille()">
+		<header>	
+			<br/>
+			<h2>TD n°4 Technologies web – Application météo </h2>
+			<br/>
+		</header>
+
+		<select id = "choixVille" onchange="afficheVille()">
+			<option value="Rio">Rio</option>
+			<option value="Niort">Niort</option>
+			<option value="Tourcoing">Tourcoing</option>
+		</select>
+
+		<div class="flex">
+			<div class="city"  id="Niort">
+				<h2>Niort</h2>
+				<p>12°, pluvieux</p>
+				<img src="img/pluvieux.png" width="20%"/>
+			</div>
+			<div class="city"  id="Rio" >
+				<h2>Rio de Janeiro</h2>
+				<p>29°, orageux</p>
+				<img src="img/orageux.png" width="20%"/>
+			</div>
+			<div class="city"  id="Tourcoing">
+				<h2>Tourcoing</h2>
+				<p>-10°, ensoleillé</p>
+				<img src="img/ensoleille.png" width="20%"/>
+			</div>
 		</div>
-		
-		<div>
-		<h2>Rio de Janeiro</h2>
-		<p>22°, orageux</p>
-		<img src="orageux.png" width="5%"/>
-		</div>
-		
-		<div>
-		<h2>Tourcoing</h2>
-		<p>27°, ensoleille</p>
-		<img src="ensoleille.png" width="5%"/>
-		</div>
-		
+
 		<footer>
-		Cailleau Quentin
+			<p>Quentin Cailleau</p>
+			<p>Icônes météo par<a href="https://thenounproject.com"> The Noun project </a></p>
 		</footer>
 	</body>
 </html>
