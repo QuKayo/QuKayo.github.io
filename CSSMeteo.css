@@ -1,0 +1,32 @@
+
+
+
+header{
+		background-color : black;
+	padding : 0px;
+	margin : 0px;
+	height : 50px;
+	width : 100%;
+	color : white;
+	display : flex;
+	justify-content: center;
+	   }
+	   
+	   
+div {
+		
+	background-color : #978E8E;
+	padding : 5px;
+	margin-top : 10px;
+	
+	}
+	
+	   
+footer {
+		background-color : #978E8E;
+		padding : 0px;
+		margin : 0px;
+	}
+	
+	
+	
